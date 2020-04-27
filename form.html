@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: linen;
+
+        }
+
+        h1 {
+            color: red;
+            margin-left: 20px;
+        }
+
+        h2 {
+            color: blue;
+
+        }
+    </style>
+    <script type="text/javascript">
+        function validate() {
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var address = document.getElementById("address").value;
+            var mobile = document.getElementById("mobile").value;
+            var male = document.getElementById("male").value;
+            var female = document.getElementById("female").value;
+            var email = document.getElementsByName("email").value;
+            var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (name == null || name == "" && password == null || password == "" && address == null || address == "") {
+                alert("plz enter the valid data");
+                return false;
+            }
+            else if (mobile.length < 10) {
+                alert("plz enter valid mobile no");
+                return false;
+            }
+            else if (!re.test(email.value)) {
+                alert("plz enter the valid email");
+                return false;
+            }
+            else {
+                alert("validation done");
+            }
+        }
+    </script>
+    <h1 align="center">REGISTRATION FORM</h1>
+</head>
+
+<body>
+    <table align="center" cellpadding="10">
+        <form action="form.php" method="POST">
+            <tr>
+                <td>
+                    <h2 align="centre">Personal Details:</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td>
+                    <input type="text" name="firstname" id="name"><br>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td>
+                    <input type="text" name="password" id="password"><br>
+                </td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>
+                    <textarea type="text" name="address" row="5" column="10" id="address"></textarea><br>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    Male<input type="radio" name="gender" value="male" id="male">
+                    female<input type="radio" name="gender" value="female" id="female"><br>
+                </td>
+            </tr>
+            <tr>
+                <td>Date Of Birth:</td>
+                <td>
+                    <input type="date" name="date"><br>
+                </td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td>
+                    <select>
+                        <option value="none">NONE</option>
+                        <option value="india">INDIA</option>
+                        <option value="usa">USA</option>
+                        <option value="iran">IRAN</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2 align="centre">Contact Details:</h2>
+                </td>
+            </tr>
+            <td>Email:</td>
+            <td>
+                <input type="text" name="email"><br>
+            </td>
+            </tr>
+            <tr>
+                <td>Mobile No:</td>
+                <td>
+                    <input type="number" maxlength="10" name="num" id="mobile">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2 align="centre">Academic Details:</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>Class</td>
+                <td>Marks</td>
+                <td>Year Of Passing</td>
+            </tr>
+            <tr>
+                <td>10th</td>
+                <td><input type="mark" name="mark"></td>
+                <td><input type="number" maxlength=4 value="year"></td>
+            </tr>
+            <tr>
+                <td>12th</td>
+                <td><input type="mark" name="mark"></td>
+                <td><input type="number" maxlength=4 value="year"></td>
+            </tr>
+            <tr>
+                <td>1st year</td>
+                <td><input type="mark" name="mark"></td>
+                <td><input type="number" maxlength=4 value="year"></td>
+            </tr>
+            <tr>
+                <td>2nd year</td>
+                <td><input type="mark" name="mark"></td>
+                <td><input type="number" maxlength=4 value="year"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="Submit" value="Submit" onclick="validate()">
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>
